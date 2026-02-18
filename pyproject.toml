@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "regime-mcp-server"
+version = "0.1.0"
+description = "MCP server for real-time market regime classification — give AI agents market awareness"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Sentinel Global Enterprises", email = "sentinel@sentinel-algo.com"}]
+keywords = ["mcp", "trading", "regime", "hmm", "spy", "options", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "yfinance>=0.2.30",
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
+
+[project.scripts]
+regime-mcp = "regime_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["regime_mcp*"]
